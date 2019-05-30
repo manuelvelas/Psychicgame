@@ -4,17 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Psychic</title>
+    <style>
+        .foto img{
+            width: 950px;
+            height: 650px;
+            align-content: center;
+           margin-left: 250px;
+        }
+        #game{
+            width: 940px;
+            align-content: center;
+            margin: 0 auto;
+        }
+    
+    </style>
 </head>
 <body>
+    <!-- division for the image -->
+        <div class="foto">
+            <img src="https://www.monsterchildren.com/wp-content/uploads/2018/04/monster-children-psychic-1068x571.jpg" alt="">
+        </div>
         <div id="game">
                 <h1>The Psychic Game</h1>
-                <h1>Try to guess what is the hidden letter</h1>
-                <h1>you only have 8 oportunities so think really good</h1>
-                <h1>your chose: <span  id="mychoice"></span></h1>
-                <h1>Wings: <span  id="wins"></span></h1>
-                <h1>Losses: <span  id="losses"></span></h1>
-                <h1>User Lives: <span  id="userlives"></span></h1>
+                <h2>Try to guess what is the hidden letter</h2>
+                <h2>you only have 8 oportunitties so think really good</h2>
+                <h2>your chose: <span  id="mychoice"></span></h2>
+                <h2>Wings: <span  id="wins"></span></h2>
+                <h2>Losses: <span  id="losses"></span></h2>
+                <h2>User Lives: <span  id="userlives"></span></h2>
 
         </div>
 
@@ -51,6 +69,7 @@
         console.log("you win "+ wins);
         userlives -= 1;
         console.log("you have "+userlives +" left");
+        alert("you Won!")
         
     }else{
         userlives = userlives -1;
@@ -83,7 +102,7 @@
     document.getElementById("losses").textContent = losses;
     document.getElementById("userlives").textContent = userlives;
     }
-    close;
+   
 
    
     </script>
