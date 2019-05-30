@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div id="game">
+                <h1>The Psychic Game</h1>
+                <h1>Try to guess what is the hidden letter</h1>
+                <h1>you only have 8 oportunities so think really good</h1>
+                <h1>your chose: <span  id="mychoice"></span></h1>
+                <h1>Wings: <span  id="wins"></span></h1>
+                <h1>Losses: <span  id="losses"></span></h1>
+                <h1>User Lives: <span  id="userlives"></span></h1>
+
+        </div>
+
+    <script type="text/javascript">
+    // var mychoice = document.getElementById("mychoice");
+    //this game is designed to try to guess the letter of a word
+    var letters = ["a","c", "d","f","g","k","l","m","n","o","p","z"];
+    
+    var wins = 0;
+    var losses = 0;
+    var userlives =8;
+
+    //get a ramson value of the letters array
+    var computerGuess = letters[Math.floor(Math.random() * letters.length)];
+    console.log(computerGuess);
+
+    //get the input of the user
+    document.onkeyup = function(event) {
+        var userGuess = event.key.toLowerCase();
+        console.log(userGuess);
+       
+    //check if the letter is in the computer guess 
+
+    
+    function search(){
+
+    console.log("right after function call userlives:"+ userlives);
+    var check = computerGuess.includes(userGuess);
+   
+    if(userlives>0){
+    if(check === true){
+        wins ++;
+        console.log("yes");
+        console.log("you win "+ wins);
+        userlives -= 1;
+        console.log("you have "+userlives +" left");
+        
+    }else{
+        userlives = userlives -1;
+        console.log(userlives);
+        losses ++;
+        console.log("no");
+        console.log("you lose "+ losses);
+        // userlives = -1;
+        console.log("you have " + userlives +" left");
+        
+    }
+
+    }
+    
+    }
+    search();
+    // if(search.check){
+    //     wins++;
+    //     console.log("you win"+ wins);
+    // }else{
+    //     console.log("you lose")
+    // }
+    // }}
+    
+    //give the info that we need to upload
+    document.getElementById("mychoice").textContent = userGuess;
+    document.getElementById("wins").textContent = wins;
+    document.getElementById("losses").textContent = losses;
+    document.getElementById("userlives").textContent = userlives;
+    }
+
+   
+    </script>
+</body>
+</html>
